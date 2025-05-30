@@ -154,4 +154,34 @@ public class Internship {
      * @param portalPassword String portal password
      */
     public void setPortalPassword(String portalPassword) { this.portalPassword = portalPassword; }
+
+    /**
+     * Method to return a CSV-safe, comma-separated string of the internship class attributes
+     * @return a CSV-safe formatted string
+     */
+    public String toCSV() {
+        return String.join(",",
+                escape(companyName),
+                escape(roleTitle),
+                escape(status),
+                escape(dateApplied),
+                escape(location),
+                escape(compensation),
+                escape(type),
+                escape(link),
+                escape(portalPassword));
+    }
+
+    /**
+     * Method to handle escaping for quotes and commas from user input
+     * @param attribute the input attribute string to escape for CSV output
+     * @return a CSV-safe version of the input attribute string
+     */
+    public String escape(String attribute) {
+        if (attribute.contains(",") || attribute.contains("\"") || attribute.contains("\n")) {
+            attribute = attribute.replace("\"", "\"\""); // escaping the internal quotes
+            return "\"" + attribute + "\""; // wrap attribute in quotes
+        }
+        return attribute;
+    }
 }
