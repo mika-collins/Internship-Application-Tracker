@@ -19,7 +19,7 @@ public class Internship {
     private String portalPassword;
 
     /**
-     * Constructor for the Internship class
+     * Full constructor for the Internship class
      *
      * @param companyName String name of the company offering the internship
      * @param roleTitle String title of the internship role
@@ -41,6 +41,21 @@ public class Internship {
         this.type = type;
         this.link = link;
         this.portalPassword = portalPassword;
+    }
+
+    /**
+     * No argument constructor for the internship class
+     */
+    public Internship() {
+        this.companyName = "";
+        this.roleTitle = "";
+        this.status = "";
+        this.dateApplied = "";
+        this.location = "";
+        this.compensation = "";
+        this.type = "";
+        this.link = "";
+        this.portalPassword = "";
     }
 
     // Getters for internship class attributes
