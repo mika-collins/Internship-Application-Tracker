@@ -20,7 +20,7 @@ A Java-based desktop application designed to help keep track of internship appli
 - Displays a **table** of all internship applications and their corresponding details
 - **Add Application** button opens a popup window to input new internship details
 - **Edit Application** button opens a popup window to edit or delete an existing application
-- Basic **error handling** to ensure clean data entry
+- Basic **error handling** using JavaFx `Alert` popups
 - An `Internship` class to store internship data as objects
 - An `InternshipDataHandler` utility that saves and loads internship data from a local CSV file
 
@@ -48,6 +48,13 @@ A Java-based desktop application designed to help keep track of internship appli
 
 ## 📷 Screenshots (Current Project)
 
+### Main Dashboard
+![Dashboard](Images/main_dashboard.png)
 
+### Add Internship Popup Window
+![Add Internship](Images/add_internship.png)
+
+### Edit Internship Popup Window
+![Edit Internship](Images/edit_internship.png)
 
 ---
