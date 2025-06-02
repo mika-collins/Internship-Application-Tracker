@@ -26,7 +26,7 @@ A Java-based desktop application designed to help keep track of internship appli
 
 ## 🚧 In Progress and Future Features
 
-- **Search** functionality by company name
+- **Search** functionality by any of the internship details
 - Color-coding of application statuses in the table:
   - Green = Accepted  
   - Red = Rejected  
