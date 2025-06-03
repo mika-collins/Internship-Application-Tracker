@@ -23,7 +23,7 @@ A Java-based desktop application designed to help keep track of internship appli
 - Basic **error handling** using JavaFx `Alert` popups
 - An `Internship` class to store internship data as objects
 - An `InternshipDataHandler` utility that saves and loads internship data from a local CSV file
-- - **Search** functionality by company name
+- **Search** functionality by company name
 
 ## 🚧 In Progress and Future Features
 
