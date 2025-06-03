@@ -94,12 +94,12 @@ public class EditExistingInternshipController {
 
             // Save updated internship list to file and display confirmation to user
             InternshipDataHandler.saveToCSV(internshipList);
-            showAlert(Alert.AlertType.INFORMATION, "Saved Changes!", "The changed to the internship application were successfully saved.");
+            showAlert(Alert.AlertType.INFORMATION, "Saved Changes!", "Changes to the internship application were successfully saved.");
             ((Stage) button_Save.getScene().getWindow()).close();
 
         } catch (IOException error) {
             error.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "File Error", "The internship could not be saved. Please try again.");
+            showAlert(Alert.AlertType.ERROR, "File Error", "The changes could not be saved. Please try again.");
 
         } catch (Exception error) {
             error.printStackTrace();
