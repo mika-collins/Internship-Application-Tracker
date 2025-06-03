@@ -62,6 +62,11 @@ public class InternshipTrackerController {
         // Load existing data into the table
         loadInternshipsFromFile();
         tableView_InternshipTable.setItems(internshipsList);
+
+        // Filter internship table by company name search
+        textField_SearchByCompanyName.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterTableBySearch(newValue);
+        });
     }
 
     /**
@@ -170,4 +175,31 @@ public class InternshipTrackerController {
             }
         }
     }
+
+    /**
+     * Method to filter the table based on the company name searched by the user
+     * @param searchText the text provided by the user within the search text field (i.e. company name)
+     */
+    private void filterTableBySearch(String searchText) {
+
+        // Set the table to display all internships if no search input
+        if (searchText == null || searchText.isEmpty()) {
+            tableView_InternshipTable.setItems((internshipsList));
+            return;
+        }
+
+        // New list to keep track of all filtered internships
+        ObservableList<Internship> filteredList = FXCollections.observableArrayList();
+
+        // Loop to check all internships for search matches, append to filtered list
+        for (Internship internship : internshipsList) {
+            if (internship.getCompanyName().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(internship);
+            }
+        }
+
+        // Filter table display
+        tableView_InternshipTable.setItems(filteredList);
+    }
+
 }
