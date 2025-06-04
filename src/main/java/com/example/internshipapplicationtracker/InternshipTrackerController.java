@@ -67,6 +67,9 @@ public class InternshipTrackerController {
         textField_SearchByCompanyName.textProperty().addListener((observable, oldValue, newValue) -> {
             filterTableBySearch(newValue);
         });
+
+        // Color code table column based on status
+        setStatusColumnColors();
     }
 
     /**
@@ -202,4 +205,41 @@ public class InternshipTrackerController {
         tableView_InternshipTable.setItems(filteredList);
     }
 
+    /**
+     * Method to color code the status column within the table depending on the application status type
+     */
+    private void setStatusColumnColors() {
+        tableColumn_Status.setCellFactory(column -> new TableCell<Internship, String>() {
+
+            @Override
+            protected void updateItem(String status, boolean empty) {
+                super.updateItem(status, empty);
+
+                if (empty || status == null) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(status);
+                    setStyle(""); // reset first
+
+                    switch (status) {
+                        case "Accepted!":
+                            setStyle("-fx-background-color: #b9f6ca;"); // set green
+                            break;
+                        case "Pending":
+                            setStyle("-fx-background-color: #fff59d;"); // set yellow
+                            break;
+                        case "Interview":
+                            setStyle("-fx-background-color: #fff59d;"); // set yellow
+                            break;
+                        case "Rejected":
+                            setStyle("-fx-background-color: #ffcdd2;"); // set red
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        });
+    }
 }
