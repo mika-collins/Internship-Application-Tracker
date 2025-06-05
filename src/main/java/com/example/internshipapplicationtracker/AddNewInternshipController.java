@@ -30,7 +30,7 @@ public class AddNewInternshipController {
 
     // Lists to populate the various choice boxes with drop down options
     ObservableList<String> typeList = FXCollections.observableArrayList("On-site", "Hybrid", "Remote", "Unknown");
-    ObservableList<String> statusList = FXCollections.observableArrayList("Not Applied", "Applied", "Accepted!", "Rejected", "Interview", "Pending");
+    ObservableList<String> statusList = FXCollections.observableArrayList("Not Applied", "Accepted!", "Rejected", "Interviewing", "Pending");
     ObservableList<String> compensationList = FXCollections.observableArrayList("Paid", "Unpaid", "Unknown");
 
     /**

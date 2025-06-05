@@ -34,7 +34,7 @@ public class EditExistingInternshipController {
 
     // Initialize lists to populate the choice box options
     ObservableList<String> typeList = FXCollections.observableArrayList("On-site", "Hybrid", "Remote", "Unknown");
-    ObservableList<String> statusList = FXCollections.observableArrayList("Not Applied", "Applied", "Accepted!", "Rejected", "Interview", "Pending");
+    ObservableList<String> statusList = FXCollections.observableArrayList("Not Applied", "Accepted!", "Rejected", "Interviewing", "Pending");
     ObservableList<String> compensationList = FXCollections.observableArrayList("Paid", "Unpaid", "Unknown");
 
     // Currently selected internship and full internships list

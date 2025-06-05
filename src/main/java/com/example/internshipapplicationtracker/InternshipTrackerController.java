@@ -229,7 +229,7 @@ public class InternshipTrackerController {
                         case "Pending":
                             setStyle("-fx-background-color: #fff59d;"); // set yellow
                             break;
-                        case "Interview":
+                        case "Interviewing":
                             setStyle("-fx-background-color: #fff59d;"); // set yellow
                             break;
                         case "Rejected":
