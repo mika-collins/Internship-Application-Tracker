@@ -8,6 +8,7 @@ package com.example.internshipapplicationtracker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.event.ActionEvent;
@@ -36,6 +37,7 @@ public class InternshipTrackerController {
     @FXML private TableColumn<Internship, String> tableColumn_Type;
     @FXML private TableColumn<Internship, String> tableColumn_Link;
     @FXML private TableColumn<Internship, String> tableColumn_PortalPassword;
+    @FXML private PieChart pieChart_StatusDistribution;
 
     // Observable list to store internships for the table display
     private ObservableList<Internship> internshipsList = FXCollections.observableArrayList();
@@ -70,6 +72,9 @@ public class InternshipTrackerController {
 
         // Color code table column based on status
         setStatusColumnColors();
+
+        // Method to initialize the pie chart with data
+        updatePieChart();
     }
 
     /**
@@ -241,5 +246,49 @@ public class InternshipTrackerController {
                 }
             }
         });
+    }
+
+    /**
+     * Method to display an up-to-date pie chart of the internship application status distributions
+     */
+    private void updatePieChart() {
+        // Set counters for each status to zero
+        int accepted = 0, pending = 0, rejected = 0, interviewing = 0, notApplied = 0;
+
+        // Iterate through all internships to keep a count of various status types
+        for (Internship internship : internshipsList) {
+            String status = internship.getStatus();
+
+            switch (status) {
+                case "Accepted!":
+                    accepted++;
+                    break;
+                case "Pending":
+                    pending++;
+                    break;
+                case "Interviewing":
+                    interviewing++;
+                    break;
+                case "Rejected":
+                    rejected++;
+                    break;
+                case "Not Applied":
+                    notApplied++;
+                    break;
+            }
+        }
+
+        // Assign variables and text to be displayed with the pie chart
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Accepted!", accepted),
+                new PieChart.Data("Pending", pending),
+                new PieChart.Data("Interviewing", interviewing),
+                new PieChart.Data("Rejected", rejected),
+                new PieChart.Data("Not Applied", notApplied)
+        );
+
+        // Display pie chart
+        pieChart_StatusDistribution.setData(pieChartData);
+        pieChart_StatusDistribution.setTitle("Current Internship Statuses");
     }
 }
