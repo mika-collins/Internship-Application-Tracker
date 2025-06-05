@@ -1,0 +1,91 @@
+/* =============================
+   GLOBAL STYLES
+   ============================= */
+.root {
+/* Main background and text */
+    -fx-background-color: #371B58;
+    -fx-text-fill: #E0E0E0;
+}
+
+
+/* =============================
+   VBOX STYLES
+   ============================= */
+.vbox {
+    -fx-background-color: #4C3575;
+    -fx-background-radius: 15;
+}
+
+
+/* =============================
+   BUTTON STYLES
+   ============================= */
+.button {
+    -fx-background-color: #5B4B8A;
+    -fx-text-fill: #E0E0E0;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #6E5CAD;
+}
+
+
+/* =============================
+   TEXTFIELD STYLES (Search Bar)
+   ============================= */
+.text-field {
+    -fx-background-color: #60519b;
+    -fx-text-fill: #E0E0E0;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+}
+
+
+/* =============================
+   TITLE TEXT STYLES
+   ============================= */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E0E0E0;
+}
+
+
+/* =============================
+   TABLE VIEW STYLES
+   ============================= */
+.table-view .cell {
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.accepted-status {
+    -fx-background-color: #b9f6ca; /* Green */
+}
+
+.pending-status {
+    -fx-background-color: #fff59d; /* Yellow */
+}
+
+.interviewing-status {
+    -fx-background-color: #fff59d; /* Yellow */
+}
+
+.rejected-status {
+    -fx-background-color: #ffcdd2; /* Red */
+}
+
+
+
