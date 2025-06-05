@@ -21,8 +21,11 @@ public class InternshipTracker extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Internship Application Tracker.fxml"));
-
         Scene scene = new Scene(root);
+
+        // Reference to retrieve CSS styles
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
         stage.setTitle("Internship Application Tracker");
         stage.setScene(scene);
         stage.show();

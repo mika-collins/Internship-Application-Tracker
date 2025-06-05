@@ -229,16 +229,16 @@ public class InternshipTrackerController {
 
                     switch (status) {
                         case "Accepted!":
-                            setStyle("-fx-background-color: #b9f6ca;"); // set green
+                            getStyleClass().add("accepted-status"); // set green
                             break;
                         case "Pending":
-                            setStyle("-fx-background-color: #fff59d;"); // set yellow
+                            getStyleClass().add("pending-status"); // set yellow
                             break;
                         case "Interviewing":
-                            setStyle("-fx-background-color: #fff59d;"); // set yellow
+                            getStyleClass().add("interviewing-status"); // set yellow
                             break;
                         case "Rejected":
-                            setStyle("-fx-background-color: #ffcdd2;"); // set red
+                            getStyleClass().add("rejected-status"); // set red
                             break;
                         default:
                             break;
