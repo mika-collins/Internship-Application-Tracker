@@ -24,13 +24,13 @@ A Java-based desktop application designed to help keep track of internship appli
 - An `Internship` class to store internship data as objects
 - An `InternshipDataHandler` utility that saves and loads internship data from a local CSV file
 - **Search** functionality by company name
-
-## 🚧 In Progress and Future Features
-
 - Color-coding of application statuses in the table:
   - Green = Accepted  
   - Red = Rejected  
   - Yellow = Pending
+
+## 🚧 In Progress and Future Features
+
 - **Pie chart** showing the distribution of application statuses
 - Counter to display total **number of completed internships**
 - Notes section or **calendar view** to track progress or important dates
