@@ -6,6 +6,7 @@
 package com.example.internshipapplicationtracker;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
@@ -74,7 +75,9 @@ public class InternshipTrackerController {
         setStatusColumnColors();
 
         // Method to initialize the pie chart with data
-        updatePieChart();
+        internshipsList.addListener((ListChangeListener<Internship>) change -> {
+            updatePieChart();
+        });
     }
 
     /**
@@ -241,6 +244,7 @@ public class InternshipTrackerController {
                             getStyleClass().add("rejected-status"); // set red
                             break;
                         default:
+                            setStyle(""); // no color for other options
                             break;
                     }
                 }
