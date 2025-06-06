@@ -5,6 +5,7 @@
  */
 package com.example.internshipapplicationtracker;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -71,10 +72,11 @@ public class InternshipTrackerController {
             filterTableBySearch(newValue);
         });
 
-        // Color code table column based on status
+        // Initialize colored columns and pie chart on start up
         setStatusColumnColors();
+        updatePieChart();
 
-        // Method to initialize the pie chart with data
+        // Listener to update the pie chart in real time
         internshipsList.addListener((ListChangeListener<Internship>) change -> {
             updatePieChart();
         });
