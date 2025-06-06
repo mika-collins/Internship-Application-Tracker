@@ -115,12 +115,4 @@
 .default-color2.chart-pie { -fx-pie-color: #03A9F4; } /* Interviewing */
 .default-color4.chart-pie { -fx-pie-color: #BFC0C0; } /* Not Applied */
 
-/* Legend Styling */
-.chart-legend {
-    -fx-background-color: #4C3575;
-    -fx-fill: #E0E0E0;
-    -fx-border-color: #6E5CAD;
-    -fx-padding: 8;
-    -fx-font-size: 14px;
-}
 
