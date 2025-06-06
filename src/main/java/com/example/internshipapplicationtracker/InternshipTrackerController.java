@@ -223,28 +223,30 @@ public class InternshipTrackerController {
             protected void updateItem(String status, boolean empty) {
                 super.updateItem(status, empty);
 
+                // Clear all style classed before adding new ones
+                getStyleClass().removeAll("accepted-status", "pending-status", "interviewing-status", "rejected-status");
+
                 if (empty || status == null) {
                     setText(null);
                     setStyle("");
                 } else {
                     setText(status);
-                    setStyle(""); // reset first
+                    setStyle(""); // Reset first
 
                     switch (status) {
                         case "Accepted!":
-                            getStyleClass().add("accepted-status"); // set green
+                            getStyleClass().add("accepted-status"); // green
                             break;
                         case "Pending":
-                            getStyleClass().add("pending-status"); // set yellow
+                            getStyleClass().add("pending-status"); // yellow
                             break;
                         case "Interviewing":
-                            getStyleClass().add("interviewing-status"); // set yellow
+                            getStyleClass().add("interviewing-status"); // blue
                             break;
                         case "Rejected":
-                            getStyleClass().add("rejected-status"); // set red
+                            getStyleClass().add("rejected-status"); // red
                             break;
                         default:
-                            setStyle(""); // no color for other options
                             break;
                     }
                 }
