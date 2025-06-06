@@ -72,20 +72,42 @@
 }
 
 .accepted-status {
-    -fx-background-color: #b9f6ca; /* Green */
+    -fx-background-color: #baffc9; /* Green */
 }
 
 .pending-status {
-    -fx-background-color: #fff59d; /* Yellow */
+    -fx-background-color: #ffffba; /* Yellow */
 }
 
 .interviewing-status {
-    -fx-background-color: #fff59d; /* Yellow */
+    -fx-background-color: #bae1ff; /* Blue */
 }
 
 .rejected-status {
     -fx-background-color: #ffcdd2; /* Red */
 }
 
+/* =============================
+   PIE CHART STYLES
+   ============================= */
+#statusPieChart {
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
 
+/* Pie Slices Styling */
+.default-color0.chart-pie { -fx-pie-color: #4CAF50; } /* Accepted */
+.default-color1.chart-pie { -fx-pie-color: #FFE324; } /* Pending */
+.default-color3.chart-pie { -fx-pie-color: #EC744A; } /* Rejected */
+.default-color2.chart-pie { -fx-pie-color: #03A9F4; } /* Interviewing */
+.default-color4.chart-pie { -fx-pie-color: #BFC0C0; } /* Not Applied */
+
+/* Pie chart legend styling */
+.chart-legend {
+    -fx-background-color: #4C3575;
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: #6E5CAD;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
 
