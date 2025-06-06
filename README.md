@@ -12,6 +12,7 @@ A Java-based desktop application designed to help keep track of internship appli
 - **Java** (with OOP structure)
 - **JavaFX** for GUI functionality
 - **SceneBuilder** for visual FXML layout design
+- **CSS** for styling the user interface
 - **IntelliJ IDEA** as the development environment
 - **CSV file writing/reading** for saving data locally 
 
@@ -28,10 +29,12 @@ A Java-based desktop application designed to help keep track of internship appli
   - Green = Accepted  
   - Red = Rejected  
   - Yellow = Pending
+  - Blue = Interviewing
+  - Gray = Not Applied
+- **Pie chart** showing the distribution of application statuses
 
 ## 🚧 In Progress and Future Features
 
-- **Pie chart** showing the distribution of application statuses
 - Counter to display total **number of completed internships**
 - Notes section or **calendar view** to track progress or important dates
 - "Close" or "Log Out" button for user exit
