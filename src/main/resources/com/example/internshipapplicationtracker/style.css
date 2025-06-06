@@ -34,7 +34,7 @@
 
 
 /* =============================
-   TEXTFIELD STYLES (Search Bar)
+   TEXT FIELD STYLES (Search Bar)
    ============================= */
 .text-field {
     -fx-background-color: #60519b;
@@ -95,17 +95,30 @@
     -fx-background-color: transparent;
 }
 
-/* Pie Slices Styling */
+/* Title Styling */
+.chart-title {
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Label Styling */
+.chart-pie-label {
+    -fx-font-size: 14px;
+    -fx-fill: #E0E0E0;
+}
+
+/* Pie Chart Colors */
 .default-color0.chart-pie { -fx-pie-color: #4CAF50; } /* Accepted */
 .default-color1.chart-pie { -fx-pie-color: #FFE324; } /* Pending */
 .default-color3.chart-pie { -fx-pie-color: #EC744A; } /* Rejected */
 .default-color2.chart-pie { -fx-pie-color: #03A9F4; } /* Interviewing */
 .default-color4.chart-pie { -fx-pie-color: #BFC0C0; } /* Not Applied */
 
-/* Pie chart legend styling */
+/* Legend Styling */
 .chart-legend {
     -fx-background-color: #4C3575;
-    -fx-text-fill: #E0E0E0;
+    -fx-fill: #E0E0E0;
     -fx-border-color: #6E5CAD;
     -fx-padding: 8;
     -fx-font-size: 14px;
