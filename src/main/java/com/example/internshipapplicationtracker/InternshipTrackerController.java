@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class InternshipTrackerController {
@@ -286,17 +287,38 @@ public class InternshipTrackerController {
             }
         }
 
-        // Assign variables and text to be displayed with the pie chart
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Accepted!", accepted),
-                new PieChart.Data("Pending", pending),
-                new PieChart.Data("Interviewing", interviewing),
-                new PieChart.Data("Rejected", rejected),
-                new PieChart.Data("Not Applied", notApplied)
-        );
+        // Create all pie chart data entries (fixed order)
+        List<PieChart.Data> allData = new ArrayList<>();
+                allData.add(new PieChart.Data("Accepted!", accepted));
+                allData.add(new PieChart.Data("Pending", pending));
+                allData.add(new PieChart.Data("Interviewing", interviewing));
+                allData.add(new PieChart.Data("Rejected", rejected));
+                allData.add(new PieChart.Data("Not Applied", notApplied));
 
-        // Display pie chart
+                // Filter out data with value of zero
+                ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+                for (PieChart.Data data : allData) {
+                    if (data.getPieValue() > 0) {
+                        pieChartData.add(data);
+                    }
+                }
+
+        // Update and display pie chart
         pieChart_StatusDistribution.setData(pieChartData);
         pieChart_StatusDistribution.setTitle("Current Internship Statuses");
+
+        Platform.runLater(() -> {
+            for (PieChart.Data data : pieChartData) {
+
+                // Normalize name to match CSS
+                String normalizedStatus = data.getName()
+                        .toLowerCase()
+                        .replace(" ", "")
+                        .replace("!", "");
+
+                // Add the CSS style
+                data.getNode().getStyleClass().add(normalizedStatus + "-slice");
+            }
+        });
     }
 }
