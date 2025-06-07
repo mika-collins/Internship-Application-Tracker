@@ -109,10 +109,11 @@
 }
 
 /* Pie Chart Colors */
-.default-color0.chart-pie { -fx-pie-color: #4CAF50; } /* Accepted */
-.default-color1.chart-pie { -fx-pie-color: #FFE324; } /* Pending */
-.default-color3.chart-pie { -fx-pie-color: #EC744A; } /* Rejected */
-.default-color2.chart-pie { -fx-pie-color: #03A9F4; } /* Interviewing */
-.default-color4.chart-pie { -fx-pie-color: #BFC0C0; } /* Not Applied */
+.accepted-slice { -fx-pie-color: #66BB6A; }
+.pending-slice { -fx-pie-color: #FFD54F; }
+.rejected-slice { -fx-pie-color: #EF5350; }
+.interviewing-slice { -fx-pie-color: #64B5F6; }
+.notapplied-slice { -fx-pie-color: #B0BEC5 ; }
+
 
 
