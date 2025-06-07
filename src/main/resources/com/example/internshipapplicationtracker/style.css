@@ -26,10 +26,13 @@
     -fx-font-weight: bold;
     -fx-background-radius: 10;
     -fx-cursor: hand;
+    -fx-transition: background-color 0.3s ease, -fx-scale-x 0.3s ease, -fx-scale-y 0.3s ease, -fx-effect 0.3s ease, -fx-text-fill 0.3s ease;
 }
 
 .button:hover {
-    -fx-background-color: #6E5CAD;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 2);
 }
 
 
