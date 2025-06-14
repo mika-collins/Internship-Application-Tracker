@@ -1,6 +1,6 @@
 # 🎓 Internship Application Tracker
 
-A Java-based desktop application designed to help keep track of internship applications. 
+A Java-based desktop application designed to help keep track of internship applications.
 
 ## 📌 Notes
 
@@ -21,25 +21,26 @@ A Java-based desktop application designed to help keep track of internship appli
 - Displays a **table** of all internship applications and their corresponding details
 - **Add Application** button opens a popup window to input new internship details
 - **Edit Application** button opens a popup window to edit or delete an existing application
-- Basic **error handling** using JavaFx `Alert` popups
+- **Error handling** using JavaFx `Alert` popups
 - An `Internship` class to store internship data as objects
 - An `InternshipDataHandler` utility that saves and loads internship data from a local CSV file
 - **Search** functionality by company name
 - Color-coding of application statuses in the table:
-  - Green = Accepted  
+  - Green = Accepted!  
   - Red = Rejected  
   - Yellow = Pending
   - Blue = Interviewing
   - Gray = Not Applied
 - **Pie chart** showing the distribution of application statuses
+- Counter to display total number of **tracked internships**
 
 ## 🚧 In Progress and Future Features
 
-- Counter to display total **number of completed internships**
 - Notes section or **calendar view** to track progress or important dates
 - "Close" or "Log Out" button for user exit
 - Creation of a **desktop icon** to launch the program like a traditional app
 - Checkboxes to filter table by any internship details
+- **Icons** to enhance UI experience 
 
 ## 📁 Running the Program
 
@@ -61,4 +62,6 @@ A Java-based desktop application designed to help keep track of internship appli
 ### Edit Internship Popup Window
 ![Edit Internship](Images/edit_internship.png)
 
+### One Example of Error Handling and Alerts
+![Error Handling](Images/error_handling.png)
 ---
