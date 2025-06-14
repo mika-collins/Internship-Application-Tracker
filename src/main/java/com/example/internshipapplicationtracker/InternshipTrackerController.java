@@ -41,6 +41,7 @@ public class InternshipTrackerController {
     @FXML private TableColumn<Internship, String> tableColumn_Link;
     @FXML private TableColumn<Internship, String> tableColumn_PortalPassword;
     @FXML private PieChart pieChart_StatusDistribution;
+    @FXML private Label totalApplicationsLabel;
 
     // Observable list to store internships for the table display
     private ObservableList<Internship> internshipsList = FXCollections.observableArrayList();
@@ -73,13 +74,15 @@ public class InternshipTrackerController {
             filterTableBySearch(newValue);
         });
 
-        // Initialize colored columns and pie chart on start up
+        // Initialize colored columns, pie chart, and application counts on start up
         setStatusColumnColors();
         updatePieChart();
+        updateApplicationsCount();
 
-        // Listener to update the pie chart in real time
+        // Listener to update the pie chart and application count in real time
         internshipsList.addListener((ListChangeListener<Internship>) change -> {
             updatePieChart();
+            updateApplicationsCount();
         });
     }
 
@@ -320,5 +323,13 @@ public class InternshipTrackerController {
                 data.getNode().getStyleClass().add(normalizedStatus + "-slice");
             }
         });
+    }
+
+    /**
+     * Method to keep track and display the total number of internship applications recorded in the table
+     */
+    public void updateApplicationsCount() {
+        int applicationsCount = tableView_InternshipTable.getItems().size();
+        totalApplicationsLabel.setText("Total Tracked Applications: " + applicationsCount);
     }
 }
